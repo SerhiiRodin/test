@@ -8,22 +8,95 @@
     <title>Document</title>
   </head>
   <body>
+    <ul id="menu" class="menu">
+      <li class="menu-item">home</li>
+      <li class="menu-item">about</li>
+      <li class="menu-item">gallery</li>
+      <li>blog</li>
+    </ul>
+
+    <div class="testList" id="testList"></div>
+
+    <p id="paragraph" class="text red big">
+      Proin magna. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing
+      dolor urna a orci. Etiam rhoncus. Donec mi odio, faucibus at, scelerisque quis, convallis in,
+      nisi.
+    </p>
+
+    <ul class="dishes">
+      <li data-id="14">Baked Yak &amp; Mushrooms</li>
+      <li data-id="7">Strawberry Pancakes</li>
+      <li data-id="3">Caramel Toffee</li>
+      <li data-id="61">Pistachio Elderberry Wafer</li>
+    </ul>
+
+    <article class="article">
+      <h2 class="title">Article title</h2>
+      <p class="textt">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam!
+        <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam,
+        nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.
+      </p>
+      <a class="link" href="">Read more</a>
+    </article>
+
     <label>
       Число
-      <input type="number" data-value/>
+      <input type="number" data-value />
     </label>
 
-    <button type="button" data-add>Прибавить</button>
-    <button type="button" data-reset>Очистить</button>
+    <button class="btn" type="button" data-add>Прибавить</button>
+    <button class="btn" type="button" data-reset>Очистить</button>
 
-    <p class="js-output">Сумма: <span>0</span> </p>
+    <p class="js-output">Сумма: <span>0</span></p>
+
+    <button id="single" class="btn" data-action="add">Add Listener</button>
+    <button id="multiple" class="btn" data-action="remove">Remove Listener</button>
+    <hr />
+    <button id="btn" class="btn">Click me</button>
+
+    <!-- Разметка для задачи с машинами -->
+
+    <form class="js-forme" action="submit">
+      <input type="text" name="query" />
+      <select name="type">
+        <option value="brend">brend</option>
+        <option value="model">model</option>
+      </select>
+      <button type="submit">search</button>
+
+      <ul class="js-list"></ul>
+
+      <ul class="js-listFilm"></ul>
+
+
+      <label for="">
+        Что ищем?
+        <br>
+        <input type="text" id="filterTech">
+      </label>
+
+      <ul class="js-listTech"></ul>
+  
+
+
+      <!-- Lodash library script file -->
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- <script src="./js/script-cikli.js" type="module"></script> -->
     <!-- <script src="./js/script-massiv.js" type="module"></script> -->
     <!-- <script src="./js/script-function.js" type="module"></script> -->
     <!-- <script src="./js/object.js" type="module"></script> -->
     <!-- <script src="./js/object-task.js" type="module"></script> -->
-    <script src="./js/callback-function.js" type="module"></script>
-
+    <!-- <script src="./js/callback-function.js" type="module"></script> -->
+    <!-- <script src="./js/script-this.js" type="module"></script> -->
+    <script src="./js/dom.js"></script>
+    <!-- <script src="./js/event.js"></script> -->
   </body>
 </html>

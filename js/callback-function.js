@@ -236,8 +236,45 @@ const makeCarsWithDiscount = (cars, discount) =>
     return newCar;
   });
 
+// Или можно записать так
+//   cars.map(car => {
+//     return {
+//       ...car,
+//       price: car.price * (1 - discount),
+//     };
+//   });
+
+// Или неявный возврат
+//   cars.map(car => ({
+//     ...car,
+//     price: car.price * (1 - discount),
+//   }));
+
 console.table(makeCarsWithDiscount(cars, 0.2));
 console.table(makeCarsWithDiscount(cars, 0.5));
+
+// Example 2.1 - Метод map
+// Находим модель 'Explorer' и меняем ее цену на 0.2
+
+const makeCarsWithChengrd = (cars, model, margin) =>
+  cars.map(car => {
+    // if (car.model === model) {
+    //   return {
+    //     ...car,
+    //     price: car.price * (1 + margin),
+    //   };
+    // }
+    // return car;
+
+    // или можно написать так
+    const newCar = { ...car };
+    if (newCar.model === model) {
+      newCar.price = newCar.price * (1 + margin);
+    }
+    return newCar;
+  });
+
+console.table(makeCarsWithChengrd(cars, 'Explorer', 0.2));
 
 //* Example 3 - Метод filter
 // Нехай функція filterByPrice повертає масив автомобілів ціна яких менша ніж значення параметра
@@ -251,21 +288,25 @@ console.table(filterByPrice(cars, 25000));
 
 const getCarByModel = (cars, model) => cars.find(car => car.model === model);
 
-console.log(getCarByModel(cars, "F-150"));
-console.log(getCarByModel(cars, "CX-9"));
+console.log(getCarByModel(cars, 'F-150'));
+console.log(getCarByModel(cars, 'CX-9'));
 
 //* Example 4 - Метод sort
 // Нехай функція sortByAscendingAmount повертає новий масив автомобілів відсортований за зростанням
 //  значення якості amount.
 
-const sortByAscendingAmount = cars => [...cars].sort((firstCar, secondCar) => firstCar.amount - secondCar.amount);
+const sortByAscendingAmount = cars =>
+  [...cars].sort((firstCar, secondCar) => firstCar.amount - secondCar.amount);
 
 console.log(sortByAscendingAmount(cars));
 
 //* Example 5 - Метод reduce
 // Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount).
 
-const getTotalAmount = cars => cars.reduce((acc, car) => { return (acc += car.amount); }, 0);
+const getTotalAmount = cars =>
+  cars.reduce((acc, car) => {
+    return (acc += car.amount);
+  }, 0);
 
 console.log(getTotalAmount(cars));
 
@@ -279,3 +320,69 @@ const getSortedCarsOnSale = cars =>
     .filter(car => car.onSale === true);
 
 console.table(getSortedCarsOnSale(cars));
+
+//----------------------------------------------------------------------------------------------
+// метод reduce для сбора эл. tags в массив и статистика для tags
+const tweets = [
+  { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+  { id: '001', likes: 2, tags: ['html', 'css'] },
+  { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+  { id: '003', likes: 8, tags: ['css', 'react'] },
+  { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+const allTags = tweets =>
+  tweets.reduce((acc, tweet) => {
+    acc.push(...tweet.tags);
+    return acc;
+
+    // или такая запись
+    // return [...acc, ...tweet.tags];
+  }, []);
+
+console.log(allTags(tweets));
+const allTagsArrey = allTags(tweets);
+
+// статистика будет в виде объекта вида: {css: 2, nodejs: 3, html: 2, react: 2, js: 3}
+//  если свойство с ключом tag есть увеличиваем на 1
+// если свойства с таким ключом нет, то создать его и записать 1
+
+const tagsStats = allTagsArrey =>
+  allTagsArrey.reduce((acc, tag) => {
+    console.log(acc);
+
+    if (acc.hasOwnProperty(tag)) {
+      acc[tag] += 1;
+      return acc;
+    }
+
+    acc[tag] = 1;
+    return acc;
+
+    // чтоб не мутировать объект когда записываем в него свойство tag
+    // if (acc.hasOwnProperty(tag)) {
+    //   return {
+    //     ...acc,
+    //     [tag]: acc[tag] + 1,
+    //   };
+    // }
+    // return {
+    //   ...acc,
+    //   [tag]: 1,
+    // };
+      
+  }, {});
+
+console.log(tagsStats(allTagsArrey));
+
+//----------------------------------------------------------------------------------------------
+// замена методу массива concat
+const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Monkong', 'Singu'];
+
+const newArray = [...oldClients, ...newClients];
+
+const newArray1 = oldClients.concat(newClients);
+
+console.log(newArray);
+console.log(newArray1);
