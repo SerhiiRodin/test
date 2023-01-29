@@ -415,10 +415,9 @@ const inputEl = document.getElementById('filterTech');
 const listTech = document.querySelector('.js-listTech');
 
 // Вешаем слушателя на input
-inputEl.addEventListener('input', onFilterChenge);
+inputEl.addEventListener('input', _.debounce(onFilterChenge, 2000));
 
 const ListItemsMarkup = createListItemsMarkup(tech);
-
 
 // функция создания строки разметки
 function createListItemsMarkup(items) {
@@ -443,6 +442,6 @@ function onFilterChenge(event) {
 
 // повторяется код заменим его на функцию listTech.innerHTML = ListItemsMarkup
 
-function populateList (markup) {
+function populateList(markup) {
   listTech.innerHTML = markup;
 }
