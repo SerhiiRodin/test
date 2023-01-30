@@ -43,19 +43,31 @@
     </div>
 
     <form id="form">
-        <fieldset>
-            <legend>Sign in form</legend>
-            <label>
-                Enter your name
-                <input type="text" id="inputName" placeholder="Name">
-            </label><label>
-                Enter your password
-                <input type="password" id="inputPassword" placeholder="Password">
-            </label>
-        </fieldset>
+      <fieldset>
+        <legend>Sign in form</legend>
+        <label>
+          Enter your name
+          <input type="text" id="inputName" placeholder="Name" /> </label
+        ><label>
+          Enter your password
+          <input type="password" id="inputPassword" placeholder="Password" />
+        </label>
+      </fieldset>
     </form>
 
+    <br />
 
+    <button type="button" class="btn">Click me</button>
+    <br />
+
+    <br>
+    <div class="timer">
+      <p class="clockface js-clockface"></p>
+      <div class="actions">
+        <button type="button" class="timer-btn" data-action-start>Запустить</button>
+        <button type="button" class="timer-btn" data-action-stop>Остановить</button>
+      </div>
+    </div>
 
     <!-- Lodash library script file -->
     <script
@@ -65,6 +77,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="./js/ivent-bubling.js"></script>
+    <script src="./js/interval.js"></script>
   </body>
 </html>
