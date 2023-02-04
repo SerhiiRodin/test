@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+   
+    <form id="form">
+      <fieldset>
+        <legend>Sign in form</legend>
+        <label>
+          Enter your name
+          <input type="text" id="inputName" placeholder="Name" /> </label
+        ><label>
+          Enter your password
+          <input type="password" id="inputPassword" placeholder="Password" />
+        </label>
+      </fieldset>
+    </form>
+
+    <br />
+
+    <button type="button" class="btn">Click me</button>
+    <br />
+
+    <br>
+    <div class="timer">
+      <p class="clockface js-clockface"></p>
+      <div class="actions">
+        <button type="button" class="timer-btn" data-action-start>Запустить</button>
+        <button type="button" class="timer-btn" data-action-stop>Остановить</button>
+      </div>
+    </div>
+
+    <!-- Lodash library script file -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./js/promise.js"></script>
+  </body>
+</html>
