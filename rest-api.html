@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/rest-api.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" class="btn">Fetch users</button>
+    <ul class="user-list"></ul>
+
+    <form id="pokemonForm">
+      <input class="pokemonTxt" type="text" name="pokemonTxt" placeholder="Imput ID pokemons" />
+      <button class="submit" id="buttonPokemon">Enter ID</button>
+    </form>
+  
+    <br /><br />
+    <form id="form">
+      <input type="text" name="news" placeholder="Search news" />
+      <input type="submit" value="Search" />
+    </form>
+
+    <div id="newsWrapper"></div>
+
+    <button type="button">Load more</button>
+
+    <div class="pokemon"></div>
+
+    <!-- Lodash library script file -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./js/rest-api.js" type="module"></script>
+  </body>
+</html>
